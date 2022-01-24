@@ -36,3 +36,39 @@
     transform: rotate(360deg);
   }
 }
+
+$steel-blue: rgb(52, 137, 202);
+$star-dust: rgb(158, 158, 158);
+
+.associations-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  td,
+  th {
+    border: 1px solid $star-dust;
+  }
+}
+
+.associations-table-th {
+  padding: 1rem;
+}
+
+.associations-table-td {
+  padding: 0.5rem 1rem;
+}
+
+.graph-button {
+  background: $steel-blue;
+  border: none;
+  color: white;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  svg {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
