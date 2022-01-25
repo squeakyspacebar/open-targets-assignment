@@ -7,7 +7,12 @@ import reportWebVitals from "./reportWebVitals";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/",
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    // Prevent __typename from being returned when querying. We don't need it
+    // for this project and it's easier to omit it from being returned than
+    // move it after the fact.
+    addTypename: false,
+  }),
 });
 
 // Wrap the React app in ApolloProvider to expose the Apollo Client on the

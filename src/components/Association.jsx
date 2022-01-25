@@ -60,7 +60,7 @@ const Association = (props) => {
         <td className="associations-table-td">{target.gene_info.name}</td>
         <td className="associations-table-td">{association_score.overall}</td>
       </tr>
-      {isExpanded && AssociationGraph()}
+      {isExpanded && <AssociationGraph association_score={association_score} />}
     </Fragment>
   );
 };
