@@ -1,3 +1,5 @@
+@import "variables";
+
 .App {
   text-align: center;
 }
@@ -37,16 +39,22 @@
   }
 }
 
-$steel-blue: rgb(52, 137, 202);
-$star-dust: rgb(158, 158, 158);
-
 .associations-table {
-  border-collapse: collapse;
+  background-color: white;
+  border: 1px solid $mercury;
+  border-collapse: separate;
+  border-radius: 10px;
   border-spacing: 0;
 
   td,
   th {
-    border: 1px solid $star-dust;
+    border-left: 1px solid $mercury;
+    border-top: 1px solid $mercury;
+  }
+
+  td:first-child,
+  th:first-child {
+    border-left: none;
   }
 }
 
@@ -55,20 +63,34 @@ $star-dust: rgb(158, 158, 158);
 }
 
 .associations-table-td {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
+}
+
+.associations-table-btn {
+  padding: 0.75rem;
+}
+
+.association-score-graph {
+  height: 24rem;
 }
 
 .graph-button {
-  background: $steel-blue;
   border: none;
-  color: white;
+  padding: 0;
 
   &:hover {
     cursor: pointer;
   }
 
   svg {
-    height: 2.5rem;
-    width: 2.5rem;
+    background-color: $steel-blue;
+    color: white;
+    display: block;
+    height: 1.5rem;
+    width: 1.5rem;
   }
+}
+
+.table-wrapper {
+  box-shadow: 10px;
 }

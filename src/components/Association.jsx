@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 import { AssociationGraph } from "./AssociationGraph";
 
 // Renders data for an association in a table row.
@@ -47,9 +47,13 @@ const Association = (props) => {
   return (
     <Fragment>
       <tr>
-        <td>
-          <button className="graph-button" onClick={clickHandler}>
-            <div>{isExpanded ? collapseIcon : expandIcon}</div>
+        <td className="associations-table-btn">
+          <button
+            className="graph-button"
+            onClick={clickHandler}
+            title="Toggle graph view"
+          >
+            {isExpanded ? collapseIcon : expandIcon}
           </button>
         </td>
         <td className="associations-table-td">

@@ -79,7 +79,7 @@ const AssociationsTable = () => {
   );
 
   return (
-    <div>
+    <div className="table-wrapper">
       <table className="associations-table">
         <thead>
           <tr>{ColumnHeadersFragment}</tr>
