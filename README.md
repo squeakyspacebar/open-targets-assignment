@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository consists of an [Apollo GraphQL server](https://www.apollographql.com/docs/apollo-server/) that provides some target-disease association data and a React app that consumes the data from the server using [Apollo Client](https://www.apollographql.com/docs/react/) to display a data table with graphs.
 
-## Available Scripts
+The GraphQL server was built to run in AWS Lambda by way of [Netlify Functions](https://www.apollographql.com/docs/apollo-server/v2/deployment/netlify/), and the React app was scaffolded with [Create React App](https://create-react-app.dev/).
 
-In the project directory, you can run:
+# Requirements
 
-### `npm start`
+This project uses [NodeJS](https://nodejs.org/en/) (recommended v16 or above).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+First, clone a copy of the repository to your desired working directory in the terminal:
 
-### `npm test`
+```
+git clone https://github.com/squeakyspacebar/open-targets-tech-test.git
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+After the repository has been successfully cloned, navigate into the project directory:
 
-### `npm run build`
+```
+cd open-targets-tech-test
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once inside the project repository, install the project's npm dependencies by running:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+npm i
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+There is one setup step required to configure the React app. Create a copy of the `.env.sample` file in the project root directory and rename the copy to `.env`. Since `.env.sample` contains all the necessary configuration for the app and does not need to be edited, you can also skip copying the file and rename it directly.
 
-### `npm run eject`
+The easiest way to build and deploy both the application and GraphQL API is with the [Netlify CLI](https://docs.netlify.com/cli/get-started/), which a local copy should have been installed by npm. If you already have `netlify-cli` installed globally, feel free to use whichever version you wish, but you can use the locally installed version by using the following command from the project directory:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+npx netlify dev
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The previous command should automatically build both the React app and the GraphQL server, then launch local dev servers for each one. If the process does not automatically open the React app in your browser, you should be able to access it under the default location: `http://localhost:8888`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Finding Your Way Around
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## React App
 
-## Learn More
+-   The data table is implemented as a series of components under the `src/components` directory.
+-   The Apollo Client is initialized in `index.js`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Apollo GraphQL Server
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   The server implementation can be found in `src/lambda/graphql.js`.
