@@ -1,3 +1,4 @@
+import { PropTypes } from "prop-types";
 import { Fragment, useState } from "react";
 import { AssociationGraph } from "./AssociationGraph";
 
@@ -67,6 +68,11 @@ const Association = (props) => {
       {isExpanded && <AssociationGraph association_score={association_score} />}
     </Fragment>
   );
+};
+
+Association.propTypes = {
+  association_score: PropTypes.object,
+  target: PropTypes.object,
 };
 
 export { Association };

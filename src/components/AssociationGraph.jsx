@@ -1,3 +1,4 @@
+import { PropTypes } from "prop-types";
 import { useState } from "react";
 import { Tab, Tabs } from "react-bootstrap";
 import {
@@ -116,6 +117,10 @@ const AssociationGraph = (props) => {
       </td>
     </tr>
   );
+};
+
+AssociationGraph.propTypes = {
+  association_score: PropTypes.object,
 };
 
 export { AssociationGraph };

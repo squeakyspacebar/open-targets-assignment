@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
@@ -6,7 +6,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const client = new ApolloClient({
-  uri: "http://localhost:4000/",
+  uri: process.env.REACT_APP_APOLLO_GRAPHQL_SERVER_URL,
   cache: new InMemoryCache({
     // Prevent __typename from being returned when querying. We don't need it
     // for this project and it's easier to omit it from being returned than
