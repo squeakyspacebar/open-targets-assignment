@@ -43,7 +43,6 @@
   background-color: white;
   border: 1px solid $mercury;
   border-collapse: separate;
-  border-radius: 10px;
   border-spacing: 0;
 
   td,
@@ -67,7 +66,7 @@
 }
 
 .associations-table-btn {
-  padding: 0.75rem;
+  font-size: 0;
 }
 
 .association-score-graph {
@@ -86,11 +85,15 @@
     background-color: $steel-blue;
     color: white;
     display: block;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 3rem;
+    margin: 0;
+    padding: 0;
+    width: 3rem;
   }
 }
 
 .table-wrapper {
   box-shadow: 10px;
+  display: flex;
+  justify-content: center;
 }
